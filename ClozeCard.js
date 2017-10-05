@@ -1,9 +1,14 @@
 // Constructor function for creating cloze-deletion flashcards
 var ClozeCard = function(text, cloze) {
-	this.cloze = cloze;
-	this.fullText = text;
-	this.partial = "";
-	this.init();
+	// Implement scope-safe constructors
+	if(this instanceof ClozeCard) {
+		this.cloze = cloze;
+		this.fullText = text;
+		this.partial = "";
+		this.init();
+	}else {
+		return new ClozeCard(text, cloze);
+	}	
 }	
 Error.prototype.name = "Cloze-Error";
 Error.prototype.message = "The cloze deletion does not appear in the input text.";

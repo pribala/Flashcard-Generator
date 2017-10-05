@@ -3,6 +3,9 @@ var ClozeCard = function(text, cloze) {
 	this.cloze = cloze;
 	this.fullText = text;
 	this.partial = this.fullText.replace(this.cloze,'').trim();	
+	if((this.fullText).indexOf(this.cloze) === -1){
+  		throw new Error();
+  	}	
 }
 Error.prototype.name = "Cloze-Error";
 Error.prototype.message = "The cloze deletion does not appear in the input text.";

@@ -38,5 +38,10 @@
     "text": "Buddha was the founder of Buddhism.",
     "cloze": "Buddhism",
     "type": "Cloze"
+  },
+  {
+    "front": "How many seasons are there?",
+    "back": "4",
+    "type": "Basic"
   }
-];
+]

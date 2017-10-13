@@ -75,7 +75,7 @@ function createCards() {
 	    var objs = JSON.parse(data);
 	    objs.forEach(function(item){
 	    	if(item.type === "Basic") {
-	    		var newBasicCard = new BasicCard(item.question, item.answer);	
+	    		var newBasicCard = new BasicCard(item.front, item.back);	
 	    		newBasicCard.printInfo();
 	    		count++;
 	    	}else {

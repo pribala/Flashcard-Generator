@@ -1,7 +1,11 @@
 // Constructor function for creating basic flashcard objects
 var BasicCard = function(front, back) {
-	this.front = front;
-	this.back = back;
+	if(this instanceof BasicCard) {
+		this.front = front;
+		this.back = back;
+	}else {
+		return new BasicCard(front, back);
+	}		
 }
 
 // Function to print basic card details to the console.

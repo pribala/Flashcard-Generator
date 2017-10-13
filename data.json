@@ -1,0 +1,52 @@
+[
+	{
+		"question": "In the board game Monopoly, if you pay to get out of jail, how much does it cost?",
+		"answer": "$50",
+		"type": "Basic"
+	},
+	{
+		"question": "Which action movie star was the voice of the Iron Giant?",
+		"answer": "Vin Diesel",
+		"type": "Basic"
+	},
+	{
+		"question": "Aspirin comes from the bark of what tree?",
+		"answer": "White willow tree",
+		"type": "Basic"
+	},
+	{
+		"question": "According to Mohs scale, what mineral is the hardest?",
+		"answer": "Diamond",
+		"type": "Basic"
+	},
+	{
+		"question": "In what month is the Earth closest to the sun?",
+		"answer": "January",
+		"type": "Basic"
+	},
+	{
+		"text": "The teddy bear was named after the famous American politician Theodore Roosevelt.",
+		"cloze": "Theodore Roosevelt",
+		"type": "Cloze"
+	},
+	{
+		"text": "There are 32 teams in the American National Football League.",
+		"cloze": "32",
+		"type": "Cloze"
+	},
+	{
+		"text": "Russia has the largest land mass.",
+		"cloze": "Russia",
+		"type": "Cloze"
+	},
+	{
+		"text": "The planet Venus in our solar system has the longest day.",
+		"cloze": "Venus",
+		"type": "Cloze"
+	},
+	{
+		"text": "The Camel is known as the ship of the desert.",
+		"cloze": "Camel",
+		"type": "Cloze"
+	}
+]

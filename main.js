@@ -38,8 +38,65 @@ fs.stat("cards.json", function(err, stat) {
 		    //console.log(objs);
 		    objs.forEach(function(item){
 		    	objArray.push(item);
-		    	console.log(objArray);
+		    	//console.log(objArray);
 		    });	
 		});  
 	}
 });
+// Create cards interactively
+var askQuestion = function() {
+    inquirer.prompt([
+      {
+        name: "action",
+        message: "Do you want to create cards interactively or from file?",
+        type: "list",
+        choices: ["Interactive", "File"]
+      }
+    ]).then(function(answers) {
+    	if(answers.action === "Interactive"){
+	      	//createBasicCard();
+	      	console.log("Interactive");
+		}else {
+			console.log("Creating cards from external file");
+			createCards();
+		}		
+	});
+};	
+
+function createCards() {
+	fs.readFile("data.json", "utf8", function(err, data){
+	    if(err){
+	        console.log(err)
+	    }  
+	    var count = 0;            
+	    var objs = JSON.parse(data);
+	    objs.forEach(function(item){
+	    	if(item.type === "Basic") {
+	    		var newBasicCard = new BasicCard(item.question, item.answer);	
+	    		newBasicCard.printInfo();
+	    		count++;
+	    	}else {
+	    		var newClozeCard = new ClozeCard(item.text, item.cloze);	
+	    		count++; 
+	    	}	
+	    });
+		console.log(count+" cards created");
+		inquirer.prompt([
+      	{
+        	name: "userInput",
+        	message: "Do you want to play the game?",
+        	type: "list",
+        	choices: ["Yes", "No"]
+      	}
+    	]).then(function(answers) {
+    		if(answers.userInput === "Yes"){
+    			var count = 0;
+	      		//loopThroughQuestions(objs, count);
+	      		console.log("Game");
+			}else {
+				console.log("Bye Bye");
+			}		
+		});
+	});
+}
+askQuestion();

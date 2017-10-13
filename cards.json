@@ -18,5 +18,15 @@
     "front": "What is the capital of US?",
     "back": "DC",
     "type": "Basic"
+  },
+  {
+    "front": "Who is the current first lady?",
+    "back": "Melania Trump",
+    "type": "Basic"
+  },
+  {
+    "front": "Who was the democratic party nominee in the last election?",
+    "back": "Hilary Clinton",
+    "type": "Basic"
   }
 ]

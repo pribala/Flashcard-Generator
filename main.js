@@ -54,9 +54,8 @@ var askQuestion = function() {
       }
     ]).then(function(answers) {
     	if(answers.action === "Interactive"){
-	      	//createBasicCard();
-	      	console.log("Interactive");
-		}else {
+	      	createCardsInteractively();
+	    }else {
 			console.log("Creating cards from external file");
 			createCards();
 		}		
@@ -145,4 +144,77 @@ var loopThroughQuestions = function(objs, count) {
 		}
 	};
 
+// Create cards interactively
+function createCardsInteractively() {
+	inquirer.prompt([
+      {
+        name: "cardType",
+        message: "Which type of card do you want to create?",
+        type: "list",
+        choices: ["Basic", "Cloze"]
+      }
+    ]).then(function(answers) {
+    	if(answers.cardType === "Basic"){
+	      	createBasicCard();
+		}else {
+			//createClozeCardInput();
+		}		
+	});
+}
+
+// Create basic card
+function createBasicCard() {
+	inquirer.prompt([
+		{
+			type: "input",
+			name: "question",
+			message: "Enter the question"
+		},
+		{
+			type: "input",
+			name: "answer",
+			message: "Enter the answer."
+		}]).then(function(response) {
+			var newBasicCard = new BasicCard(response.question, response.answer);
+			newBasicCard.type = "Basic";
+			var logData = {"front": newBasicCard.front, "back": newBasicCard.back, "type": newBasicCard.type};
+			objArray.push(logData);
+			inquirer.prompt([
+			{
+				type: "list",
+				name: "action",
+				message: "Do you want to create another card?",
+				choices: ["Yes", "No"]
+			}]).then(function(response){
+					if(response.action === "Yes"){
+						createCardsInteractively();
+					}else {
+						fs.writeFile("cards.json", JSON.stringify(objArray, null, 2), function(err) {
+							// If an error was experienced we say it.
+							if (err) {
+							   console.log(err);
+							}
+						});
+						
+					 	console.log(objArray.length+" cards created");
+					 	inquirer.prompt([
+				      	{
+				        	name: "userInput",
+				        	message: "Do you want to play the game?",
+				        	type: "list",
+				        	choices: ["Yes", "No"]
+				      	}
+				    	]).then(function(answers) {
+				    		if(answers.userInput === "Yes"){
+				    			var count = 0;
+					      		loopThroughQuestions(objArray, count);
+							}else {
+								objArray=[];
+								console.log("Bye Bye");
+							}		
+						});
+					}
+			});
+		});
+}
 askQuestion();

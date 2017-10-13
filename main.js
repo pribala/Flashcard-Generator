@@ -34,7 +34,7 @@ fs.stat("cards.json", function(err, stat) {
 		    if(err){
 		        console.log(err)
 		    }   
-		    var objs = JSON.parse(data);
+		    var objs = JSON.parse(data.slice(0, -1));
 		    //console.log(objs);
 		    objs.forEach(function(item){
 		    	objArray.push(item);

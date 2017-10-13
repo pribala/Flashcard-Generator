@@ -63,6 +63,7 @@ var askQuestion = function() {
 	});
 };	
 
+// Create cards from external .json file and play the game.
 function createCards() {
 	fs.readFile("data.json", "utf8", function(err, data){
 	    if(err){
@@ -91,12 +92,57 @@ function createCards() {
     	]).then(function(answers) {
     		if(answers.userInput === "Yes"){
     			var count = 0;
-	      		//loopThroughQuestions(objs, count);
-	      		console.log("Game");
-			}else {
+    			console.log("Play Game!");
+	      		loopThroughQuestions(objs, count);
+	      	}else {
 				console.log("Bye Bye");
 			}		
 		});
 	});
 }
+
+// Loop through the flashcards and allow user to answer
+var loopThroughQuestions = function(objs, count) {
+		if(count < objs.length){
+			if(objs[count].type === "Basic"){
+				console.log(objs[count].front);
+				inquirer.prompt([
+				{
+					type: "input",
+					name: "answer",
+					message: "Enter the answer"
+				}]).then(function(response) {
+					if(response.answer.toUpperCase() === objs[count].back.toUpperCase()) {
+						console.log("You got it!");
+						total++;
+					}else {
+						console.log("Sorry wrong answer!");
+					}
+					count++;
+					loopThroughQuestions(objs, count);
+				});	
+			}else {
+				var partial = objs[count].text.replace(objs[count].cloze,'.....').trim();
+				console.log(partial);
+				inquirer.prompt([
+				{
+					type: "input",
+					name: "answer",
+					message: "Enter the answer"
+				}]).then(function(response) {
+					if(response.answer.toUpperCase() === objs[count].cloze.toUpperCase()) {
+						console.log("You got it!");
+						total++;
+					}else {
+						console.log("Sorry wrong answer!");
+					}
+					count++;
+					loopThroughQuestions(objs, count);
+				});	
+			}
+		}else {
+			console.log("You got "+ total+" anwers correct!");	
+		}
+	};
+
 askQuestion();

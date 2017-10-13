@@ -1,27 +1,27 @@
 [
 	{
-		"question": "In the board game Monopoly, if you pay to get out of jail, how much does it cost?",
-		"answer": "$50",
+		"front": "In the board game Monopoly, if you pay to get out of jail, how much does it cost?",
+		"back": "$50",
 		"type": "Basic"
 	},
 	{
-		"question": "Which action movie star was the voice of the Iron Giant?",
-		"answer": "Vin Diesel",
+		"front": "Which action movie star was the voice of the Iron Giant?",
+		"back": "Vin Diesel",
 		"type": "Basic"
 	},
 	{
-		"question": "Aspirin comes from the bark of what tree?",
-		"answer": "White willow tree",
+		"front": "Aspirin comes from the bark of what tree?",
+		"back": "White willow tree",
 		"type": "Basic"
 	},
 	{
-		"question": "According to Mohs scale, what mineral is the hardest?",
-		"answer": "Diamond",
+		"front": "According to Mohs scale, what mineral is the hardest?",
+		"back": "Diamond",
 		"type": "Basic"
 	},
 	{
-		"question": "In what month is the Earth closest to the sun?",
-		"answer": "January",
+		"front": "In what month is the Earth closest to the sun?",
+		"back": "January",
 		"type": "Basic"
 	},
 	{

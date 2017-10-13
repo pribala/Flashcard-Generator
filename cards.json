@@ -1,0 +1,22 @@
+[
+  {
+    "front": "Who is the current president?",
+    "back": "Trump",
+    "type": "Basic"
+  },
+  {
+    "front": "Which action movie star was the voice of the Iron Giant?",
+    "back": "Vin Diesel",
+    "type": "Basic"
+  },
+  {
+    "front": "What is the capital of NJ?",
+    "back": "Trenton",
+    "type": "Basic"
+  },
+  {
+    "front": "What is the capital of US?",
+    "back": "DC",
+    "type": "Basic"
+  }
+]

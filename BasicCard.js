@@ -4,5 +4,13 @@ var BasicCard = function(front, back) {
 	this.back = back;
 }
 
+// Function to print basic card details to the console.
+BasicCard.prototype.printInfo = function() {
+	console.log("\n================================================\n");
+	console.log("Front: "+this.front);
+	console.log("Back: "+this.back);
+	console.log("\n================================================\n");
+}
+
 // Exporting our BasicCard constructor.
 module.exports = BasicCard;

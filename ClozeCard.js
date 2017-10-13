@@ -13,7 +13,7 @@ var ClozeCard = function(text, cloze) {
 Error.prototype.name = "Cloze-Error";
 Error.prototype.message = "The cloze deletion does not appear in the input text.";
 ClozeCard.prototype.init = function() {
-	this.partial = this.fullText.replace(this.cloze,'').trim();
+	this.partial = this.fullText.replace(this.cloze,'.....').trim();
 	try{
 		if((this.fullText).indexOf(this.cloze) === -1){
 	  		throw new Error();

@@ -233,8 +233,10 @@ function createClozeCard() {
 		}]).then(function(response) {
 			var newClozeCard = new ClozeCard(response.question, response.cloze);
 			newClozeCard.type = "Cloze";
-			var logData = {"text": newClozeCard.fullText, "cloze": newClozeCard.cloze, "type": newClozeCard.type};
-			objArray.push(logData);
+			if(!newClozeCard.error){
+				var logData = {"text": newClozeCard.fullText, "cloze": newClozeCard.cloze, "type": newClozeCard.type};
+				objArray.push(logData);
+			}	
 	  		inquirer.prompt([
 			{
 				type: "list",

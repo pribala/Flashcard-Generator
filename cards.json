@@ -43,10 +43,5 @@
     "text": "Buddha was the founder of Buddhism.",
     "cloze": "Buddha",
     "type": "Cloze"
-  },
-  {
-    "text": "My name is Priya.",
-    "cloze": "pria",
-    "type": "Cloze"
   }
 ];

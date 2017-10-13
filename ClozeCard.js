@@ -28,6 +28,7 @@ ClozeCard.prototype.init = function() {
   		console.log("\n==================================================================\n");
   		console.log(e.name + ': ' + e.message);
   		console.log("\n==================================================================\n");
+  		this.error = true;
   	}
 }
 

@@ -5,11 +5,6 @@
     "type": "Basic"
   },
   {
-    "front": "Which action movie star was the voice of the Iron Giant?",
-    "back": "Vin Diesel",
-    "type": "Basic"
-  },
-  {
     "front": "What is the capital of NJ?",
     "back": "Trenton",
     "type": "Basic"
@@ -18,30 +13,5 @@
     "front": "What is the capital of US?",
     "back": "DC",
     "type": "Basic"
-  },
-  {
-    "front": "Who is the current first lady?",
-    "back": "Melania Trump",
-    "type": "Basic"
-  },
-  {
-    "front": "Who was the democratic party nominee in the last election?",
-    "back": "Hilary Clinton",
-    "type": "Basic"
-  },
-  {
-    "front": "The Indian Emperor who propagated Buddhism?",
-    "back": "Ashoka",
-    "type": "Basic"
-  },
-  {
-    "text": "Julius Caeser was a Roman Emperor.",
-    "cloze": "Roman",
-    "type": "Cloze"
-  },
-  {
-    "text": "Buddha was the founder of Buddhism.",
-    "cloze": "Buddha",
-    "type": "Cloze"
   }
-];
+]

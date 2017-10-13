@@ -34,11 +34,14 @@ fs.stat("cards.json", function(err, stat) {
 		    if(err){
 		        console.log(err)
 		    }   
-		    var objs = JSON.parse(data.slice(0, -1));
-		    //console.log(objs);
+		    if(data[data.length-1] === ";"){
+		    	var objs = JSON.parse(data.slice(0, -1));
+			}else{
+				var objs = JSON.parse(data);
+			}
+		    
 		    objs.forEach(function(item){
 		    	objArray.push(item);
-		    	//console.log(objArray);
 		    });	
 		});  
 	}

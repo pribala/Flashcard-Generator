@@ -13,7 +13,7 @@ A cloze deletion is simply a sentence that has had some of its text removed. For
 
 "George Washington was the first president of the United States."
 
-...We can create a "cloze deletion" by removing the words "George Washington":
+... We can create a "cloze deletion" by removing the words "George Washington":
 
 "... was the first president of the United States."
 
@@ -45,24 +45,30 @@ var firstPresident = new BasicCard(
     "Who was the first president of the United States?", "George Washington");
 
 // "Who was the first president of the United States?"
+
 console.log(firstPresident.front); 
 
 // "George Washington"
+
 console.log(firstPresident.back); 
 
 var firstPresidentCloze = new ClozeCard(
     "George Washington was the first president of the United States.", "George Washington");
 
 // "George Washington"
+
 console.log(firstPresidentCloze.cloze); 
 
 // " ... was the first president of the United States.
+
 console.log(firstPresidentCloze.partial); "
 
 // "George Washington was the first president of the United States.
+
 console.log(firstPresidentCloze.fullText): "
 
 // Should throw an error because "oops" doesn't appear in "This doesn't work"
+
 var brokenCloze = new ClozeCard("This doesn't work", "oops");
 
 ### Bonuses
@@ -86,6 +92,9 @@ The cards are created by reading data from data.json using fs package.
 ### Installation
 
 Download the application from GitHub.
+
 [https://github.com/pribala/Flashcard-Generator] 
+
 Install NodeJS on the system and run npm install to install the dependencies.
+
 package.json has the dependencies - the other modules that this module uses.

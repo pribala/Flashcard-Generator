@@ -13,5 +13,30 @@
     "front": "What is the capital of US?",
     "back": "DC",
     "type": "Basic"
+  },
+  {
+    "text": "Harry Potter's house is Gryffindor.",
+    "cloze": "Gryffindor",
+    "type": "Cloze"
+  },
+  {
+    "front": "Who is the current first lady?",
+    "back": "Melania Trump",
+    "type": "Basic"
+  },
+  {
+    "text": "Julius Caeser was a Roman Emperor.",
+    "cloze": "Roman",
+    "type": "Cloze"
+  },
+  {
+    "front": "Who was the democratic party nominee in the last election?",
+    "back": "Hilary Clinton",
+    "type": "Basic"
+  },
+  {
+    "text": "Buddha was the founder of Buddhism.",
+    "cloze": "Buddhism",
+    "type": "Cloze"
   }
-]
+];

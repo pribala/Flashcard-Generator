@@ -28,5 +28,20 @@
     "front": "Who was the democratic party nominee in the last election?",
     "back": "Hilary Clinton",
     "type": "Basic"
+  },
+  {
+    "text": "Julius Caeser was a Roman Emperor.",
+    "cloze": "Roman",
+    "type": "Cloze"
+  },
+  {
+    "front": "The Indian Emperor who propagated Buddish?",
+    "back": "Ashoka",
+    "type": "Basic"
+  },
+  {
+    "text": "Buddha was the founder of Buddhism.",
+    "cloze": "Buddha",
+    "type": "Cloze"
   }
-]
+];

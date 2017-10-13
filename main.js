@@ -157,7 +157,7 @@ function createCardsInteractively() {
     	if(answers.cardType === "Basic"){
 	      	createBasicCard();
 		}else {
-			//createClozeCardInput();
+			createClozeCard();
 		}		
 	});
 }
@@ -217,4 +217,62 @@ function createBasicCard() {
 			});
 		});
 }
+
+// Create cloze cards based on user input
+function createClozeCard() {
+	inquirer.prompt([
+		{
+			type: "input",
+			name: "question",
+			message: "Enter the question"
+		},
+		{
+			type: "input",
+			name: "cloze",
+			message: "Enter the cloze."
+		}]).then(function(response) {
+			var newClozeCard = new ClozeCard(response.question, response.cloze);
+			newClozeCard.type = "Cloze";
+			var logData = {"text": newClozeCard.fullText, "cloze": newClozeCard.cloze, "type": newClozeCard.type};
+			objArray.push(logData);
+	  		inquirer.prompt([
+			{
+				type: "list",
+				name: "action",
+				message: "Do you want to create another card?",
+				choices: ["Yes", "No"]
+			}]).then(function(response){
+					if(response.action === "Yes"){
+						createCardsInteractively();
+					}else {
+						fs.writeFile("cards.json", JSON.stringify(objArray, null, 2)+";", function(err) {
+							// If an error was experienced we say it.
+							if (err) {
+							   console.log(err);
+							}
+						});
+						console.log(objArray.length+" cards created");
+						inquirer.prompt([
+				      	{
+				        	name: "userInput",
+				        	message: "Do you want to play the game?",
+				        	type: "list",
+				        	choices: ["Yes", "No"]
+				      	}
+				    	]).then(function(answers) {
+				    		if(answers.userInput === "Yes"){
+				    			var count = 0;
+					      		loopThroughQuestions(objArray, count);
+							}else {
+								objArray=[];
+								console.log("Bye Bye");
+							}		
+						});
+					 	
+					}
+			});
+		});
+}
+
+// Start the app
 askQuestion();
